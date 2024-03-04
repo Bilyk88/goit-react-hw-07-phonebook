@@ -19,7 +19,6 @@ export const App = () => {
     <div
       style={{
         height: '100vh',
-        maxWidth: '460px',
         padding: '15px',
         fontSize: 24,
         color: '#010101',
