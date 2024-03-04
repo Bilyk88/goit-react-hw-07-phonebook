@@ -9,8 +9,8 @@ import {
   Form,
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/contactsSlice';
 import { getContacts } from '../../redux/selectors';
+import { addContact } from '../../redux/api';
 
 const contactSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').required('Required'),
@@ -29,7 +29,6 @@ export const ContactForm = () => {
       alert(`${newContact.name} is already in contacts.`);
     } else {
       dispatch(addContact(newContact));
-      // dispatch(addContact({ ...newContact, id: nanoid() }));
     }
   };
 
